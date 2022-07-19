@@ -7,7 +7,7 @@ const CharacterCard = ({ result }) => {
         statusColor = 'dark' :
         (result.status === 'Alive' ? statusColor = 'success' : statusColor = 'secondary')
     return (
-        <div className="card mt-3 col-5 p-0 border-dark text-center" >
+        <div className="card my-3 col-5 p-0 border-dark text-center" >
             <div className="row g-0">
                 <div className="col-md-6 ">
                     <img src={result.image} className="img-fluid rounded-start " alt='character' />

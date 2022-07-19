@@ -1,17 +1,17 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from "axios";
 import Navbar from "./layouts/Navbar";
 import Episodes from "./pages/Episodes";
 import Locations from "./pages/Locations";
 import WatchList from "./pages/WatchList";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import CharacterList from "./components/characters/CharacterList";
 
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-      </div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/episodes" element={<Episodes />} />
@@ -22,15 +22,21 @@ function App() {
   );
 }
 
-export default App;
-
+const charactersURL = 'https://rickandmortyapi.com/api/character/?page=1';
 
 function Home() {
+  const [characters, setCharacters] = useState([]);
+  const { info, results } = characters;
+  useEffect(() => {
+    axios.get(charactersURL).then((response) => {
+      setCharacters(response.data);
+    });
+  }, []);
+  if (!characters) return null;
+
   return (
     <div className="container">
-      <div className="row">
-        
-      </div>
+      <CharacterList results={results} />
     </div>
   );
 }

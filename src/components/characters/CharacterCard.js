@@ -3,12 +3,12 @@ import React from 'react'
 const CharacterCard = ({ result }) => {
     //  Character status color
     let statusColor;
-    result.status === 'Dead' ? 
-        statusColor = 'dark' : 
+    result.status === 'Dead' ?
+        statusColor = 'dark' :
         (result.status === 'Alive' ? statusColor = 'success' : statusColor = 'secondary')
-    return(
+    return (
         <div className="card mt-3 col-5 p-0 border-dark text-center" >
-            <div className="row g-0">
+            <div className="row g-7">
                 <div className="col-md-4 ">
                     <img src={result.image} className="img-fluid rounded-start " alt='character' />
                 </div>

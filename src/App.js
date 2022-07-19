@@ -8,7 +8,6 @@ import WatchList from "./pages/WatchList";
 import CharacterList from "./components/characters/CharacterList";
 import Pagination from "./components/characters/pagination/Pagination";
 
-
 export default function App() {
   return (
     <Router>
@@ -23,31 +22,31 @@ export default function App() {
   );
 }
 
-let charactersURL = `https://rickandmortyapi.com/api/character`;
+const client = axios.create({
+  baseURL: "https://rickandmortyapi.com/api"
+})
 
 function Home() {
   const [characters, setCharacters] = useState([]);
-  const { info, results } = characters;
-  const [pageNumber, setPageNumber] = useState(1);
+  // eslint-disable-next-line
+  const { results, info } = characters;
 
-
-  
   useEffect(() => {
-    axios.get(charactersURL)
-        .then((response) => {
-         setCharacters(response.data);
-    })
+    async function getPost() {
+      const response = await client.get("/character");
+      setCharacters(response.data);
+    }
+    getPost();
   }, []);
-  if (!characters) return null;
-  
+
   return (
     <div className="container">
-      <CharacterList 
+      <CharacterList
         results={results} />
-      <Pagination 
-        info={info} 
-        pageNumber={pageNumber} 
-        setPageNumber={setPageNumber}/>
+      <Pagination
+        info = {info}
+        
+        />
     </div>
   );
 }

@@ -2,14 +2,12 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 
 const Pagination = ({ info, pageNumber, setPageNumber }) => {
-
-
   return (
     <ReactPaginate
       breakLabel="..."
-      nextLabel="next >"
+      nextLabel=">>"
       pageCount={42}
-      previousLabel="< previous"
+      previousLabel="<<"
       renderOnZeroPageCount={null}
 
     />

@@ -25,8 +25,6 @@ const CharacterCard = ({ result }) => {
                         <p className="card-text">{result.location.name}</p>
                         <p className="card-text mb-0 "><small className="text-muted">Last known location:</small></p>
                         <p className="card-text ">{result.location.name}</p>
-                        
-
                     </div>
                 </div>
             </div>

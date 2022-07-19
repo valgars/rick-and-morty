@@ -8,7 +8,7 @@ const Pagination = ({ info, pageNumber, setPageNumber }) => {
     <ReactPaginate
       breakLabel="..."
       nextLabel="next >"
-      // pageCount={}
+      pageCount={42}
       previousLabel="< previous"
       renderOnZeroPageCount={null}
 

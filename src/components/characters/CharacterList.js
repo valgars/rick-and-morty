@@ -9,7 +9,8 @@ const CharacterList = ({ results }) => {
                 {results.map((result) => (
                     <CharacterCard key={result.id} result={result} />
                 ))}
-            </div>) : <Spinner />
+            </div>) :
+         <Spinner />
     )
 }
 

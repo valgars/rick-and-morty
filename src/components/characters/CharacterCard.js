@@ -14,16 +14,18 @@ const CharacterCard = ({ result }) => {
                 </div>
                 <div className="col-md-6">
                     <div className="card-body">
-                        <h5 className="card-title">{result.name}</h5>
-                        <div className='d-flex justify-content-center'>
-                            <span className={`badge text-bg-${statusColor} p-2 `}>
+                        <h5 className="card-title fs-3">{result.name}</h5>
+                        <div className='d-flex justify-content-center align-items-center'>
+                            <span className={`badge rounded-pill text-bg-${statusColor} p-2 mx-1 `}>
                                 {result.status}
-                            </span> - <p className='card-text'>{result.species}</p>
+                            </span>
+                            <p className='card-text'> - {result.species}</p>
                         </div>
-                        <p className="card-text my-3"><small className="text-muted">Last known location:</small></p>
+                        <p className="card-text mb-0 mt-2"><small className="text-muted">First seen in:</small></p>
                         <p className="card-text">{result.location.name}</p>
-                        <p className="card-text mb-1"><small className="text-muted">First seen in:</small></p>
-                        <p className="card-text">{result.location.name}</p>
+                        <p className="card-text mb-0 "><small className="text-muted">Last known location:</small></p>
+                        <p className="card-text ">{result.location.name}</p>
+                        
 
                     </div>
                 </div>

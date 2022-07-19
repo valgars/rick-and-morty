@@ -6,6 +6,7 @@ import Episodes from "./pages/Episodes";
 import Locations from "./pages/Locations";
 import WatchList from "./pages/WatchList";
 import CharacterList from "./components/characters/CharacterList";
+import Pagination from "./components/characters/pagination/Pagination";
 
 
 export default function App() {
@@ -22,21 +23,31 @@ export default function App() {
   );
 }
 
-const charactersURL = 'https://rickandmortyapi.com/api/character/?page=1';
+let charactersURL = `https://rickandmortyapi.com/api/character`;
 
 function Home() {
   const [characters, setCharacters] = useState([]);
   const { info, results } = characters;
+  const [pageNumber, setPageNumber] = useState(1);
+
+
+  
   useEffect(() => {
-    axios.get(charactersURL).then((response) => {
-      setCharacters(response.data);
-    });
+    axios.get(charactersURL)
+        .then((response) => {
+         setCharacters(response.data);
+    })
   }, []);
   if (!characters) return null;
-
+  
   return (
     <div className="container">
-      <CharacterList results={results} />
+      <CharacterList 
+        results={results} />
+      <Pagination 
+        info={info} 
+        pageNumber={pageNumber} 
+        setPageNumber={setPageNumber}/>
     </div>
   );
 }

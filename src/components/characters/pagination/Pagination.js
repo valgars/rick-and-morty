@@ -1,8 +1,18 @@
-import React from 'react'
+import React from 'react';
+import ReactPaginate from 'react-paginate';
 
-const Pagination = () => {
+const Pagination = ({ info, pageNumber, setPageNumber }) => {
+
+
   return (
-    <div>Pagination</div>
+    <ReactPaginate
+      breakLabel="..."
+      nextLabel="next >"
+      // pageCount={}
+      previousLabel="< previous"
+      renderOnZeroPageCount={null}
+
+    />
   )
 }
 

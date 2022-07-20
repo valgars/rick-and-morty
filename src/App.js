@@ -6,6 +6,7 @@ import Locations from "./pages/Locations";
 import WatchList from "./pages/WatchList";
 import CharacterList from "./components/characters/CharacterList";
 import Pagination from "./components/characters/pagination/Pagination"
+import CharacterDetails from './components/characters/CharacterDetails';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<CharacterDetails />} />
         <Route path="/episodes" element={<Episodes />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/watch-list" element={<WatchList />} />

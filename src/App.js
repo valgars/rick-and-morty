@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./layouts/Navbar";
 import Episodes from "./pages/Episodes";
-import Locations from "./pages/Locations";
 import WatchList from "./pages/WatchList";
 import CharacterList from "./components/characters/CharacterList";
 import Pagination from "./components/characters/pagination/Pagination"
@@ -15,7 +14,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/episodes" element={<Episodes />} />
-        <Route path="/locations" element={<Locations />} />
         <Route path="/watch-list" element={<WatchList />} />
       </Routes>
     </Router>

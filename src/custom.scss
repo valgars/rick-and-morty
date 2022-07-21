@@ -1,15 +1,11 @@
+//import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 // Spinner
 $spinner-width: 5rem;
 $spinner-height: $spinner-width;
+
 .spinner-grow {
     margin-top: 200px;
 }
-// Pagination from CharactersPage
 
-
-
-
-
-
-//import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";

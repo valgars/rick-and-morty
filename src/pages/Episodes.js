@@ -25,7 +25,6 @@ const Episodes  = () => {
       <div className='my-5 col-10 text-center table-responsive w-100'>
         <EpisodesTable
           results={results}
-          page='/episodes/'
         />
   
         <ReactPaginate

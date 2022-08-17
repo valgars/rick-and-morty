@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EpisodesTable = ({ results, page }) => {
+const EpisodesTable = ({ results }) => {
     return (
         <table className='table table-bordered'>
 

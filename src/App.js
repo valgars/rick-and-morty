@@ -5,7 +5,6 @@ import CharactersList from './components/characters/CharactersList';
 import Pagination from './components/characters/Pagination';
 import Navbar from './components/ui/NavBar';
 import Episodes from './pages/Episodes';
-import Locations from './pages/Locations';
 import WatchList from './pages/WatchList';
 
 
@@ -17,9 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Characters />} />
         <Route path="/:id" element={<CharacterDetails />} />
-        
+
         <Route path="/episodes" element={<Episodes />} />
-        <Route path="/locations" element={<Locations />} />
         <Route path="/watch-list" element={<WatchList />} />
       </Routes>
     </Router>

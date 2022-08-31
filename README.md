@@ -4,4 +4,4 @@ This pet project uses the Rick and Morty API to render a database of characters 
 
 live demo:
 
-
+https://dynamic-sunburst-9b2762.netlify.app

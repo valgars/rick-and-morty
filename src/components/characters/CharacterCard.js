@@ -9,7 +9,7 @@ const CharacterCard = ({ result, id, page }) => {
         (status === 'Alive' ? statusColor = 'success' : statusColor = 'secondary')
     return (
 
-        <div className='card col-2 text-center mx-1 my-1 px-0'>
+        <div className='card col-lg-2 col-md-3 col-sm-4 text-center mx-1 my-1 px-0 '>
             <Link
                 to={`${page}${id}`}
                 className="text-dark text-decoration-none "

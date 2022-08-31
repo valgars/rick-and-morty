@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import  EpisodesTable  from '../components/episodes/EpisodesTable';
+import EpisodesTable  from '../components/episodes/EpisodesTable';
 import ReactPaginate from 'react-paginate';
 
 const Episodes  = () => {

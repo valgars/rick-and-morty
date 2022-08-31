@@ -5,9 +5,7 @@ import CharactersList from './components/characters/CharactersList';
 import Pagination from './components/characters/Pagination';
 import Navbar from './components/ui/NavBar';
 import Episodes from './pages/Episodes';
-import WatchList from './pages/WatchList';
-
-
+import Search from './components/search/Search';
 
 function App() {
   return (
@@ -16,9 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Characters />} />
         <Route path="/:id" element={<CharacterDetails />} />
-
         <Route path="/episodes" element={<Episodes />} />
-        <Route path="/watch-list" element={<WatchList />} />
       </Routes>
     </Router>
   );
@@ -27,8 +23,9 @@ function App() {
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [search, setSearch] = useState("");
   const { results, info } = characters;
-  let urlCharacters = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let urlCharacters = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
     (async function () {
@@ -39,8 +36,12 @@ const Characters = () => {
 
 
   return (
-    <div className="container my-4">
+    <div className="container">
       <div className='row d-flex justify-content-center '>
+        <Search 
+          setSearch={setSearch} 
+          setPageNumber={setPageNumber} 
+        />
         <CharactersList
           results={results}
         />

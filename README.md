@@ -4,4 +4,4 @@ This pet project uses the Rick and Morty API to render a database of characters,
 
 live demo:
 
-https://jasontoups.github.io/rick-and-morty
+
